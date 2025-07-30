@@ -14,6 +14,10 @@ pub mod request_reply;
 pub mod router;
 /// Subscribe Sockets
 pub mod subscribe;
+/// XPUB Sockets
+pub mod xpub;
+/// XSUB Sockets
+pub mod xsub;
 
 pub use dealer::dealer;
 pub use pair::pair;
@@ -24,6 +28,8 @@ pub use request_reply::reply;
 pub use request_reply::request;
 pub use router::router;
 pub use subscribe::subscribe;
+pub use xpub::xpub;
+pub use xsub::xsub;
 
 #[doc(hidden)]
 pub trait FromZmqSocket<T> {

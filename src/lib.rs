@@ -10,6 +10,7 @@
 //! * Publish/Subscribe
 //! * Dealer/Router
 //! * Push/Pull
+//! * XPUB/XSUB
 //! ## Usage
 //!
 //! Usage is made to be simple, but opinionated.   See the [`examples/`](https://github.com/cetra3/tmq/tree/master/examples) Directory for some examples.
