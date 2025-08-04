@@ -8,13 +8,6 @@ repository = "https://github.com/cetra3/tmq"
 readme = "README.md"
 edition = "2021"
 
-[features]
-default = []
-# Enable XPUB manual socket option
-manual = []
-# Enable XPUB nodrop socket option
-nodrop = []
-
 [dependencies]
 futures = { version = "0.3", default-features = false, features = ["alloc"] }
 tokio = { version = "1", features = ["net"] }

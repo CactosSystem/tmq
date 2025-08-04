@@ -86,31 +86,4 @@ impl Xpub {
             Err(e) => Err(crate::TmqError::Zmq(e)),
         }
     }
-
-    /// Set manual subscription handling mode.
-    ///
-    /// By default, the XPUB socket automatically manages subscriptions.
-    /// When you enable manual mode, the application is responsible for
-    /// sending subscription messages to downstream subscribers.
-    ///
-    /// Note: This is a ZeroMQ socket option that may not be available in all versions.
-    /// Check the ZeroMQ documentation for your version.
-    #[cfg(feature = "manual")]
-    pub fn set_xpub_manual(&mut self, manual: bool) -> Result<()> {
-        self.get_socket().set_sockopt(zmq::XPUB_MANUAL, manual)?;
-        Ok(())
-    }
-
-    /// Set message replay or "last value" cache behavior.
-    ///
-    /// This option sets whether to provide a message cache to new subscriptions.
-    /// It's useful for implementing "last value caching" for late joining subscribers.
-    ///
-    /// Note: This is a ZeroMQ socket option that may not be available in all versions.
-    /// Check the ZeroMQ documentation for your version.
-    #[cfg(feature = "nodrop")]
-    pub fn set_xpub_nodrop(&mut self, nodrop: bool) -> Result<()> {
-        self.get_socket().set_sockopt(zmq::XPUB_NODROP, nodrop)?;
-        Ok(())
-    }
 }
